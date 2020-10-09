@@ -2,10 +2,12 @@
 using OpenQA.Selenium.Interactions;
 using OpenQA.Selenium.Support.UI;
 using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
+
+/*
+ - Extension functions and reusuable codes are available here
+- All reusability functions are provided here
+*/
+
 
 namespace SpecflowForExperion.Utils
 {
@@ -13,7 +15,7 @@ namespace SpecflowForExperion.Utils
     {
         public IWebDriver driver;
 
-        public  BasePage(IWebDriver _driver)
+        public BasePage(IWebDriver _driver)
         {
             driver = _driver;
         }
@@ -23,7 +25,7 @@ namespace SpecflowForExperion.Utils
             IWebElement element = WaitForElementExists(locator);
             element.Clear();
             element.SendKeys(text);
-            
+
         }
 
         public void ClickButton(By locator)
@@ -33,7 +35,7 @@ namespace SpecflowForExperion.Utils
 
         public string getText(By locator)
         {
-           return WaitForElementExists(locator).Text;
+            return WaitForElementExists(locator).Text;
         }
 
         public void ScrollToElement(By locator)
@@ -46,10 +48,10 @@ namespace SpecflowForExperion.Utils
 
         private IWebElement WaitForElementExists(By element)
         {
-            
-           WebDriverWait wait = new WebDriverWait(driver, TimeSpan.FromSeconds(10));
-           return wait.Until(SeleniumExtras.WaitHelpers.ExpectedConditions.ElementExists(element));            
-                           
+
+            WebDriverWait wait = new WebDriverWait(driver, TimeSpan.FromSeconds(10));
+            return wait.Until(SeleniumExtras.WaitHelpers.ExpectedConditions.ElementExists(element));
+
 
         }
     }
