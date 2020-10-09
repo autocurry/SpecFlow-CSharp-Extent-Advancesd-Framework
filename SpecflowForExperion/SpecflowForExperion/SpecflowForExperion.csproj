@@ -27,7 +27,10 @@
 
   <ItemGroup>
     <Folder Include="Drivers\" />
-    <Folder Include="Hooks\" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <Reference Include="System.Configuration" />
   </ItemGroup>
 
 </Project>
