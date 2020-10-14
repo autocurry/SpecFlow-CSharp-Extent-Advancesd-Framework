@@ -12,7 +12,7 @@ Background:
 Scenario: Verify the All time pending order total value
 	Given I have access to the NOPCommerceWebsite
 	When I navigate to the admin page
-	Then Verify the All time pending order value is $2,468.80
+	Then Verify the All time pending order value is $2,469.80
 
 #This scenario will verify that the firstname based search is working as expeceted for the customers tab
 @browser_chrome
@@ -24,5 +24,5 @@ Scenario Outline: Verify customer email address
 
 	Examples:
 		| name     | email                             |
-		| John     | admin@yourStore.com               |
+		| John     | aaadmin@yourStore.com               |
 		| Victoria | victoria_victoria@nopCommerce.com |

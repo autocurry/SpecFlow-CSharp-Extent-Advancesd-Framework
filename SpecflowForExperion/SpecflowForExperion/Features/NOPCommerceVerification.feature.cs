@@ -123,7 +123,7 @@ this.FeatureBackground();
  testRunner.When("I navigate to the admin page", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
 #line hidden
 #line 15
- testRunner.Then("Verify the All time pending order value is $2,468.80", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
+ testRunner.Then("Verify the All time pending order value is $2,469.80", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
 #line hidden
             }
             this.ScenarioCleanup();
@@ -132,7 +132,7 @@ this.FeatureBackground();
         [NUnit.Framework.TestAttribute()]
         [NUnit.Framework.DescriptionAttribute("Verify customer email address")]
         [NUnit.Framework.CategoryAttribute("browser_chrome")]
-        [NUnit.Framework.TestCaseAttribute("John", "admin@yourStore.com", null)]
+        [NUnit.Framework.TestCaseAttribute("John", "aaadmin@yourStore.com", null)]
         [NUnit.Framework.TestCaseAttribute("Victoria", "victoria_victoria@nopCommerce.com", null)]
         public virtual void VerifyCustomerEmailAddress(string name, string email, string[] exampleTags)
         {

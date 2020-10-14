@@ -61,7 +61,7 @@ namespace SpecflowForExperion.Steps
         public void ThenTheEmailIdDisplayedWillbeasExpected(string email)
         {
 
-            Assert.AreEqual(emailResult, email);
+            Assert.AreEqual(emailResult, email);            
 
         }
         private string getURL(string name)
