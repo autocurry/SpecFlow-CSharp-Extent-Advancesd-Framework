@@ -1,10 +1,7 @@
 ﻿using OpenQA.Selenium;
 using OpenQA.Selenium.Chrome;
-using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
+using OpenQA.Selenium.IE;
+using OpenQA.Selenium.Firefox;
 
 namespace SpecflowForExperion.Utils
 {
@@ -16,17 +13,23 @@ namespace SpecflowForExperion.Utils
 
         public IWebDriver CreateDriver(string browser)
         {
-            switch (browser.ToUpper())
+            switch (browser.ToLower())
             {
                 case "chrome":
-                    return new ChromeDriver();
-                    break;
+                    ChromeOptions options = new ChromeOptions();
+                    options.AddArguments("start-maximized");
+                    return new ChromeDriver(options);
+
+                case "ie":
+                    return new InternetExplorerDriver();
+
+                case "firefox":
+                    return new FirefoxDriver();
+
                 default:
                     return new ChromeDriver();
-                    break;
+
             }
-
-
 
         }
 

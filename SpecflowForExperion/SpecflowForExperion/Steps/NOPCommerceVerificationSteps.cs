@@ -1,16 +1,6 @@
 ﻿using NUnit.Framework;
 using OpenQA.Selenium;
-using OpenQA.Selenium.Chrome;
-using OpenQA.Selenium.Interactions;
 using SpecflowForExperion.Pages;
-using SpecflowForExperion.Utils;
-using System;
-using System.Collections.Generic;
-using System.Configuration;
-using System.Linq;
-using System.Runtime.CompilerServices;
-using System.Text;
-using System.Threading;
 using TechTalk.SpecFlow;
 
 namespace SpecflowForExperion.Steps
@@ -18,7 +8,7 @@ namespace SpecflowForExperion.Steps
     [Binding]
     public sealed class NOPCommerceVerificationSteps
     {
-        
+
         private readonly ScenarioContext _scenariocontext;
 
         public NOPCommerceVerificationSteps(ScenarioContext context)
@@ -29,7 +19,7 @@ namespace SpecflowForExperion.Steps
         IWebDriver _driver;
         private string emailResult;
 
-        [Given(@": I navigate to the login page")]
+        [Given(@"I navigate to the login page")]
         public void GivenINavigateToTheLoginPage()
         {
 
@@ -37,11 +27,11 @@ namespace SpecflowForExperion.Steps
             _driver.Navigate().GoToUrl(getURL("login"));
         }
 
-               
+
 
         [Given(@"I have access to the NOPCommerceWebsite")]
         public void GivenIHaveAccessToTheNOPCommerceWebsite()
-        {            
+        {
             LoginPage _loginPage = new LoginPage(_driver);
             _loginPage.LoginToPortal();
         }
@@ -49,7 +39,7 @@ namespace SpecflowForExperion.Steps
         [When(@"I navigate to the (.*) page")]
         public void WhenINavigateToTheAdminPage(string pageName)
         {
-            _driver.Navigate().GoToUrl(getURL(pageName));           
+            _driver.Navigate().GoToUrl(getURL(pageName));
 
         }
 
@@ -64,14 +54,14 @@ namespace SpecflowForExperion.Steps
         public void WhenEnterTheFirstNameAndSearch(string name)
         {
             CustomerPage _customerPage = new CustomerPage(_driver);
-           emailResult =  _customerPage.getEmailUsingFirstName(name);
+            emailResult = _customerPage.getEmailUsingFirstName(name);
         }
 
         [Then(@"the Email id displayed will be (.*)")]
-        public void ThenTheEmailIdDisplayedWillBeAdminYourStore_Com(string email)
+        public void ThenTheEmailIdDisplayedWillbeasExpected(string email)
         {
 
-            Assert.AreEqual(emailResult, email);
+            Assert.AreEqual(emailResult, email);            
 
         }
         private string getURL(string name)
@@ -80,11 +70,11 @@ namespace SpecflowForExperion.Steps
             {
                 case "login":
                     return "https://admin-demo.nopcommerce.com/";
-                    
+
 
                 case "admin":
                     return "https://admin-demo.nopcommerce.com/Admin/";
-                    
+
 
                 case "customer":
                     return "https://admin-demo.nopcommerce.com/Admin/Customer/List/";
